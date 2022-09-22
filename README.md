@@ -4,9 +4,9 @@
 </a></p>
 
 <p align="center">
-<a>vue 3.2.38</a> |
-<a>vue-router 4.1.5</a> |
-<a>typescript 4.8.3</a>
+<a>vue 3.2.45</a> |
+<a>vue-router 4.1.6</a> |
+<a>typescript 4.9.4</a>
 </p>
 
 ___
@@ -14,7 +14,11 @@ ___
 ## Command Line
 
 ```shell
-rm -rf .idea/ node_modules/ .yarn/ .pnp.cjs .pnp.loader.mjs yarn.lock package-lock.json
+start https://github.com/hainghia/vuejs
+```
+
+```shell
+rm -rf dist/ node_modules/ .yarn/ .pnp.cjs .pnp.loader.mjs yarn.lock package-lock.json
 ```
 
 ## Build and dev scripts
