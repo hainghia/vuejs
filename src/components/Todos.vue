@@ -1,4 +1,5 @@
 <template>
+  <AddTodo @add-todo="addTodo"/>
   <TodoItem
       v-for="todo in todos"
       :key="todo.id"
@@ -12,24 +13,26 @@
 
 import {ref} from "@vue/reactivity";
 import TodoItem from "@/components/TodoItem.vue";
+import AddTodo from "@/components/AddTodo.vue";
+import {v4 as uuidv4} from 'uuid';
 
 export default {
   name: "Todos",
-  components: {TodoItem},
+  components: {AddTodo, TodoItem},
   setup() {
     const todos = ref([
       {
-        id: 11,
+        id: uuidv4(),
         title: 'Job 1',
         completed: false
       },
       {
-        id: 12,
+        id: uuidv4(),
         title: 'Job 2',
         completed: false
       },
       {
-        id: 13,
+        id: uuidv4(),
         title: 'Job 3',
         completed: false
       },
@@ -47,10 +50,15 @@ export default {
           }
       )
     }
+    const addTodo = (newTodo) => {
+      todos.value.push(newTodo)
+      console.log(newTodo.id)
+    }
     return {
       todos,
       markCompleted,
-      deleted
+      deleted,
+      addTodo
     }
   },
 }
