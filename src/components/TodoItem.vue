@@ -1,8 +1,8 @@
 <template>
-  <p :class="['toto-item', todoProps.completed ? 'is-complete': '']" :id="id">
-    <input type="checkbox" name="" :checked="todoProps.completed">
+  <p :class="['toto-item', todoProps.completed ? 'is-complete': '']" :id="todoProps.id">
+    <input type="checkbox" name="" :checked="todoProps.completed" @change="markItemCompleted">
     {{ todoProps.title }}
-    <button class="del-btn">Delete</button>
+    <button class="del-btn" @click="deleteItem">Delete</button>
   </p>
 </template>
 
@@ -12,10 +12,19 @@ import {ref} from "@vue/reactivity";
 export default {
   name: "TodoItem",
   props: ['todoProps'],
-  setup() {
+  setup(props, context) {
     const id = ref('my-id')
+    const markItemCompleted = () => {
+      // console.log(props.todoProps.id)
+      context.emit('item-completed', props.todoProps.id)
+    }
+    const deleteItem = () => {
+      context.emit('item-deleted', props.todoProps.id)
+    }
     return {
-      id
+      id,
+      markItemCompleted,
+      deleteItem
     }
   }
 }
