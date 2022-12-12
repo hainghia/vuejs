@@ -1,5 +1,11 @@
 <template>
-  <TodoItem v-for="todo in todos" v-bind:key="todo.id" v-bind:todoProps="todo"/>
+  <TodoItem
+      v-for="todo in todos"
+      :key="todo.id"
+      :todoProps="todo"
+      @item-completed="markCompleted"
+      @item-deleted="deleted"
+  />
 </template>
 
 <script>
@@ -13,23 +19,38 @@ export default {
   setup() {
     const todos = ref([
       {
-        id: 1,
+        id: 11,
         title: 'Job 1',
-        completed: true
+        completed: false
       },
       {
-        id: 2,
+        id: 12,
         title: 'Job 2',
-        completed: true
+        completed: false
       },
       {
-        id: 3,
+        id: 13,
         title: 'Job 3',
         completed: false
       },
     ])
+    const markCompleted = (id) => {
+      // console.log('Parent = ', id)
+      todos.value.map(todo => {
+        if (todo.id === id) todo.completed = !todo.completed
+      })
+    }
+    const deleted = (id) => {
+      todos.value = todos.value.filter(
+          todo => {
+            return todo.id !== id
+          }
+      )
+    }
     return {
-      todos
+      todos,
+      markCompleted,
+      deleted
     }
   },
 }
