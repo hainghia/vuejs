@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <h1>Việc cần làm</h1>
+    <h1>Header Navigation</h1>
   </header>
 </template>
 
