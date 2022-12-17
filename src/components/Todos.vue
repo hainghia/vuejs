@@ -12,10 +12,9 @@
 <script>
 
 import axios from 'axios'
-import {ref} from "@vue/reactivity";
 import TodoItem from "@/components/TodoItem.vue";
 import AddTodo from "@/components/AddTodo.vue";
-import store from "@/store";
+import { mapState } from 'vuex'
 
 export default {
   name: "Todos",
@@ -55,14 +54,10 @@ export default {
       addTodo,
     }
   },
-  computed: {
-    todos() {
-      return store.state.todos
-    },
-    isAuthenticated(){
-      return store.state.auth.isAuthenticated
-    }
-  }
+  computed: mapState({
+    todos: state => state.todos,
+    isAuthenticated: state => state.auth.isAuthenticated,
+  })
 }
 </script>
 
