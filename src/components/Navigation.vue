@@ -9,12 +9,23 @@
         <li>
           <router-link to="/about">About</router-link>
         </li>
+        <li>Total todos: {{ totalTodos }}</li>
       </ul>
     </nav>
   </header>
 </template>
 
-<script setup lang="ts">
+<script lang="ts">
+import store from "@/store";
+
+export default {
+  name: "Navigation",
+  computed: {
+    totalTodos() {
+      return store.state.todos.length
+    },
+  }
+}
 </script>
 
 <style scoped>

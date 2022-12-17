@@ -349,7 +349,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/devtools-api@npm:^6.4.5":
+"@vue/devtools-api@npm:^6.0.0-beta.11, @vue/devtools-api@npm:^6.4.5":
   version: 6.4.5
   resolution: "@vue/devtools-api@npm:6.4.5"
   checksum: 40c5adc8788cb283972ce09ba7ce105fa894f4decec9168829cc8e6211462763402442e6c31be76f9da62b0e74ae724971b924571367b4ac89b94dc6894e2d07
@@ -946,7 +946,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -1873,7 +1873,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
@@ -2223,6 +2223,7 @@ __metadata:
     vue: ^3.2.45
     vue-router: ^4.1.6
     vue-tsc: ^1.0.13
+    vuex: ^4.1.0
   languageName: unknown
   linkType: soft
 
@@ -2238,7 +2239,7 @@ __metadata:
 
 "typescript@patch:typescript@4.8.4#~builtin<compat/typescript>":
   version: 4.8.4
-  resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"
+  resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=0102e9"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
@@ -2385,6 +2386,17 @@ __metadata:
     "@vue/server-renderer": 3.2.45
     "@vue/shared": 3.2.45
   checksum: df60ca80cb9fdce408eccd0c7a4d44720df9855c62e340448650d8048b1edd25da6f3bd99ed7efc19efbe1f3fdcec4ae8067ab10ae50be5bb363d996ad29251a
+  languageName: node
+  linkType: hard
+
+"vuex@npm:^4.1.0":
+  version: 4.1.0
+  resolution: "vuex@npm:4.1.0"
+  dependencies:
+    "@vue/devtools-api": ^6.0.0-beta.11
+  peerDependencies:
+    vue: ^3.2.0
+  checksum: f5e375a9c19ea3bbf4b9bc4c2adc033c37d2583e59b2d79da42bde2ab0771a086c419d62323fb354b6d421a8ddb4fd4e14f3abe5d49e9862311bc4847732b608
   languageName: node
   linkType: hard
 
