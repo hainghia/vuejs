@@ -54,10 +54,6 @@ export default {
       addTodo,
     }
   },
-  computed: mapState({
-    todos: state => state.todos,
-    isAuthenticated: state => state.auth.isAuthenticated,
-  })
 }
 </script>
 

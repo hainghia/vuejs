@@ -1,30 +1,15 @@
-import Vuex from 'vuex'
+import Vuex, {createStore, StoreOptions} from "vuex";
+import authModule from "@/store/modules/auth";
+import {RootState} from "@/store/types/types";
 
-const storeData = {
+const store: StoreOptions<RootState> = createStore({
     state: {
-        todos: [
-            {
-                id: 1,
-                title: 'Job 1',
-                completed: false
-            },
-            {
-                id: 2,
-                title: 'Job 2',
-                completed: false
-            },
-            {
-                id: 3,
-                title: 'Job 3',
-                completed: false
-            }
-        ],
-        auth: {
-            isAuthenticated: true
-        }
+        helloMessage: 'kukun'
+    },
+
+    modules: {
+        authModule,
     }
-}
+})
 
-const store = new Vuex.Store(storeData)
-
-export default store
+export default new Vuex.Store<RootState>(store)

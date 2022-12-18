@@ -10,6 +10,8 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@chakra-ui/vue": "^0.12.0",
+    "@emotion/css": "^11.10.5",
     "@vue/reactivity": "^3.2.45",
     "axios": "^1.2.1",
     "uuid": "^9.0.0",

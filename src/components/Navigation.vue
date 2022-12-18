@@ -9,22 +9,24 @@
         <li>
           <router-link to="/about">About</router-link>
         </li>
-        <li v-if="auth.isAuthenticated">Total todos: {{ todos.length }}</li>
-        <li v-if="auth.isAuthenticated">
-          <button type="submit">Logout</button>
-        </li>
-        
+        <li>{{hello}}</li>
       </ul>
     </nav>
   </header>
 </template>
 
 <script lang="ts">
-import { mapState } from 'vuex'
+import store from "@/store";
 
 export default {
   name: "Navigation",
-  computed: mapState(['todos', 'auth'])
+  computed: {
+    hello: {
+      get () : string {
+        return store.state.helloMessage
+      }
+    }
+  }
 }
 </script>
 
